@@ -1,12 +1,12 @@
 <section class="process section" id="prozess">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" appScrollReveal>
       <span class="section-tag">Ablauf</span>
       <h2 class="section-title">Der Weg durch das Insolvenzverfahren</h2>
     </div>
     <div class="process-timeline">
-      @for (step of steps; track step.title) {
-        <div class="process-step">
+      @for (step of steps; track step.title; let i = $index) {
+        <div class="process-step" appScrollReveal [appScrollRevealDelay]="i * 120">
           <div class="process-marker">
             @switch (step.icon) {
               @case ('clock') {

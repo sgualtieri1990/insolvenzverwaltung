@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 interface Task {
   number: string;
@@ -10,7 +11,7 @@ interface Task {
 
 @Component({
   selector: 'app-aufgaben',
-  imports: [],
+  imports: [ScrollRevealDirective],
   templateUrl: './aufgaben.html',
   styleUrl: './aufgaben.css',
 })

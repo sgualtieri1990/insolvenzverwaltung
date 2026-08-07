@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-trust',
-  imports: [],
+  imports: [ScrollRevealDirective],
   templateUrl: './trust.html',
   styleUrl: './trust.css',
 })

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 interface IntroCard {
   title: string;
@@ -8,7 +9,7 @@ interface IntroCard {
 
 @Component({
   selector: 'app-leistungen',
-  imports: [],
+  imports: [ScrollRevealDirective],
   templateUrl: './leistungen.html',
   styleUrl: './leistungen.css',
 })

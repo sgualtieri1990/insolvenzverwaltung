@@ -1,6 +1,6 @@
 <section class="intro section" id="leistungen">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" appScrollReveal>
       <span class="section-tag">Unsere Leistungen</span>
       <h2 class="section-title">BVS Asset-Dienstleistungen</h2>
       <p class="section-desc">
@@ -10,8 +10,8 @@
       </p>
     </div>
     <div class="intro-cards">
-      @for (card of cards; track card.title) {
-        <article class="intro-card">
+      @for (card of cards; track card.title; let i = $index) {
+        <article class="intro-card" appScrollReveal [appScrollRevealDelay]="i * 120">
           <div class="intro-card-icon">
             @switch (card.icon) {
               @case ('shield') {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 interface ProcessStep {
   title: string;
@@ -8,7 +9,7 @@ interface ProcessStep {
 
 @Component({
   selector: 'app-prozess',
-  imports: [],
+  imports: [ScrollRevealDirective],
   templateUrl: './prozess.html',
   styleUrl: './prozess.css',
 })

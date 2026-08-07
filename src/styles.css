@@ -175,6 +175,44 @@ ul {
   width: 100%;
 }
 
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.btn:hover:not(:disabled) .btn-icon--down {
+  transform: translateY(3px);
+}
+
+.btn:hover:not(:disabled) .btn-icon:not(.btn-icon--spin) {
+  transform: scale(1.08);
+}
+
+.btn-icon--spin {
+  animation: btn-spin 0.8s linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -236,6 +274,9 @@ ul {
   background: var(--color-accent);
   color: var(--color-primary-dark) !important;
   border-radius: var(--radius-sm);
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
 }
 
 .nav-cta:hover {
@@ -326,13 +367,14 @@ ul {
   background: var(--color-bg-card);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  transition: all var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   border: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 .intro-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
+  border-color: rgba(var(--color-accent-rgb), 0.2);
 }
 
 .intro-card-icon {
@@ -344,6 +386,11 @@ ul {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   border-radius: var(--radius-md);
   margin-bottom: 24px;
+  transition: transform var(--transition);
+}
+
+.intro-card:hover .intro-card-icon {
+  transform: scale(1.06);
 }
 
 .intro-card-icon svg {
@@ -465,6 +512,27 @@ ul {
   box-shadow: var(--shadow-md);
   position: relative;
   z-index: 1;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.scroll-reveal.is-visible .process-marker {
+  animation: marker-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms) both;
+}
+
+@keyframes marker-pop {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.process-step:hover .process-marker {
+  transform: scale(1.06);
+  box-shadow: var(--shadow-lg);
 }
 
 .process-marker svg {

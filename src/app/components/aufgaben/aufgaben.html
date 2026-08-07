@@ -1,6 +1,6 @@
 <section class="tasks section section-dark" id="aufgaben">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" appScrollReveal>
       <span class="section-tag">Hauptaufgaben</span>
       <h2 class="section-title">Im Überblick</h2>
       <p class="section-desc">
@@ -10,8 +10,8 @@
       </p>
     </div>
     <div class="tasks-grid">
-      @for (task of tasks; track task.number) {
-        <article class="task-card" [class.task-card-highlight]="task.highlight">
+      @for (task of tasks; track task.number; let i = $index) {
+        <article class="task-card" [class.task-card-highlight]="task.highlight" appScrollReveal [appScrollRevealDelay]="i * 100">
           <span class="task-number">{{ task.number }}</span>
           <div class="task-content">
             <h3>{{ task.title }}</h3>
