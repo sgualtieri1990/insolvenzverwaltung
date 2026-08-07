@@ -5,7 +5,7 @@ interface NavItem {
   href: string;
   label: string;
   sectionId: string;
-  icon: 'services' | 'tasks' | 'process' | 'contact';
+  icon: 'services' | 'tasks' | 'process' | 'team' | 'contact';
 }
 
 @Component({
@@ -24,6 +24,7 @@ export class Header implements AfterViewInit {
     { href: '#leistungen', label: 'Leistungen', sectionId: 'leistungen', icon: 'services' },
     { href: '#aufgaben', label: 'Aufgaben', sectionId: 'aufgaben', icon: 'tasks' },
     { href: '#prozess', label: 'Ablauf', sectionId: 'prozess', icon: 'process' },
+    { href: '#team', label: 'Team', sectionId: 'team', icon: 'team' },
     { href: '#kontakt', label: 'Kontakt', sectionId: 'kontakt', icon: 'contact' },
   ];
 
