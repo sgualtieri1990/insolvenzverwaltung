@@ -1,0 +1,29 @@
+<section class="tasks section section-dark" id="aufgaben">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Hauptaufgaben</span>
+      <h2 class="section-title">Im Überblick</h2>
+      <p class="section-desc">
+        Als Insolvenzverwalter übernehmen wir die vollständige Verantwortung
+        für das Insolvenzverfahren – von der ersten Bestandsaufnahme bis zur
+        finalen Ausschüttung an die Gläubiger.
+      </p>
+    </div>
+    <div class="tasks-grid">
+      @for (task of tasks; track task.number) {
+        <article class="task-card" [class.task-card-highlight]="task.highlight">
+          <span class="task-number">{{ task.number }}</span>
+          <div class="task-content">
+            <h3>{{ task.title }}</h3>
+            <p>{{ task.description }}</p>
+            <ul class="task-list">
+              @for (tag of task.tags; track tag) {
+                <li>{{ tag }}</li>
+              }
+            </ul>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

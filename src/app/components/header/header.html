@@ -1,0 +1,62 @@
+<header class="header" [class.scrolled]="scrolled()" id="header">
+  <nav class="nav container">
+    <a href="#" class="logo">
+      <app-logo [variant]="scrolled() ? 'dark' : 'light'" />
+    </a>
+    <ul class="nav-links">
+      @for (item of navItems; track item.sectionId) {
+        <li>
+          <a [href]="item.href" [class.nav-cta]="item.sectionId === 'kontakt'">{{ item.label }}</a>
+        </li>
+      }
+    </ul>
+  </nav>
+</header>
+
+<nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+  @for (item of navItems; track item.sectionId) {
+    <a
+      [href]="item.href"
+      class="mobile-nav-item"
+      [class.active]="activeSection() === item.sectionId"
+      [attr.aria-current]="activeSection() === item.sectionId ? 'page' : null"
+    >
+      <span class="mobile-nav-icon" aria-hidden="true">
+        @switch (item.icon) {
+          @case ('services') {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+          }
+          @case ('tasks') {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 6h12M9 12h12M9 18h12"/>
+              <path d="M4 6h.01M4 12h.01M4 18h.01"/>
+              <circle cx="4" cy="6" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="4" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="4" cy="18" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          }
+          @case ('process') {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6" cy="6" r="2"/>
+              <circle cx="18" cy="12" r="2"/>
+              <circle cx="6" cy="18" r="2"/>
+              <path d="M8 6h8l2 4M8 18h8l-2-4"/>
+            </svg>
+          }
+          @case ('contact') {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16v12H4z"/>
+              <path d="M4 7l8 6 8-6"/>
+            </svg>
+          }
+        }
+      </span>
+      <span class="mobile-nav-label">{{ item.label }}</span>
+    </a>
+  }
+</nav>

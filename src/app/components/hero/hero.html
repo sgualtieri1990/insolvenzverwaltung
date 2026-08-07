@@ -1,0 +1,63 @@
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-badge">Bewertung · Verwertung · Sicherstellung</div>
+    <h1 class="hero-title">
+      <span class="hero-brand">B<span class="hero-highlight">V</span>S</span>
+      Asset-<span class="hero-highlight">Dienstleistungen</span>
+    </h1>
+    <p class="hero-subtitle">
+      Professionelle Asset-Dienstleistungen für Kanzleien und Wirtschaft
+      in NRW, speziell im Ruhrgebiet – von der Sicherstellung
+      über die Bewertung bis zur Verwertung.
+    </p>
+    <div class="hero-actions">
+      <a href="#kontakt" class="btn btn-primary">Beratung anfragen</a>
+      <a href="#leistungen" class="btn btn-secondary">Mehr erfahren</a>
+    </div>
+    <div class="hero-stats">
+      @for (stat of stats; track stat.label) {
+        <div class="stat">
+          <div class="stat-icon" [attr.aria-hidden]="true">
+            @switch (stat.icon) {
+              @case ('experience') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 7v5l3.5 2"/>
+                </svg>
+              }
+              @case ('cases') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+                  <path d="M8 13h8M8 17h5"/>
+                </svg>
+              }
+              @case ('shield') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3l7 3v6c0 4.5-3 8.5-7 9-4-.5-7-4.5-7-9V6l7-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              }
+              @case ('drives') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 17h14l-1.5-5.5a2 2 0 00-1.9-1.4H8.4a2 2 0 00-1.9 1.4L5 17z"/>
+                  <circle cx="7.5" cy="17.5" r="1.5"/>
+                  <circle cx="16.5" cy="17.5" r="1.5"/>
+                  <path d="M5 17H3M21 17h-2M9 10l1.5-3h3L15 10"/>
+                </svg>
+              }
+              @case ('coffee') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 8h11v6a4 4 0 01-4 4H8a4 4 0 01-4-4V8z"/>
+                  <path d="M15 10h1.5a2.5 2.5 0 010 5H15"/>
+                  <path d="M6 4c0 1 .5 2 2 2M9 4c0 1 .5 2 2 2"/>
+                </svg>
+              }
+            }
+          </div>
+          <span class="stat-number">{{ stat.number }}</span>
+          <span class="stat-label">{{ stat.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
