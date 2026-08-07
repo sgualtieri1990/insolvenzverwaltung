@@ -1,0 +1,63 @@
+<section class="team section" id="team">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-tag">Wer wir sind</span>
+      <h2 class="section-title">Menschen hinter BVS</h2>
+      <p class="section-desc">
+        Hinter jeder Bewertung, Verwertung und Sicherstellung stehen erfahrene
+        Ansprechpartner, die Verfahren nicht nur fachlich – sondern auch
+        menschlich begleiten.
+      </p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-photo-wrap" appScrollReveal>
+        <div class="team-photo-frame">
+          <img
+            src="gerome-firenze.png"
+            alt="Gerome Firenze, Geschäftsführer der BVS Asset-Dienstleistungen GmbH"
+            class="team-photo"
+            width="400"
+            height="400"
+          />
+        </div>
+        <div class="team-caption">
+          <strong>Gerome Firenze</strong>
+          <span>Geschäftsführer</span>
+        </div>
+      </div>
+
+      <div class="team-content" appScrollReveal [appScrollRevealDelay]="120">
+        <p class="team-lead">
+          Die BVS Asset-Dienstleistungen GmbH steht für strukturierte
+          Asset-Dienstleistungen in anspruchsvollen Verfahren – mit dem Blick
+          fürs Detail und dem Anspruch, für alle Beteiligten das Bestmögliche
+          herauszuholen.
+        </p>
+        <p>
+          Als Geschäftsführer verantworte ich unsere Mandate persönlich:
+          von der ersten Bestandsaufnahme bis zur finalen Verwertung.
+          Dabei verbinden wir juristisches Verständnis mit wirtschaftlichem
+          Weitblick – für Kanzleien, Unternehmen und Gläubiger in NRW,
+          speziell im Ruhrgebiet.
+        </p>
+        <ul class="team-highlights">
+          @for (item of highlights; track item) {
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              {{ item }}
+            </li>
+          }
+        </ul>
+        <a href="#kontakt" class="btn btn-primary team-cta">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+          </svg>
+          Kontakt aufnehmen
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

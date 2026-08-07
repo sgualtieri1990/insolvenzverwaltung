@@ -1,0 +1,142 @@
+#team {
+  background: var(--color-bg-soft);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.team-photo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.team-photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  padding: 8px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, var(--color-accent) 0%, var(--color-primary) 100%);
+  box-shadow: var(--shadow-xl);
+}
+
+.team-photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: calc(var(--radius-xl) + 8px);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.25);
+  pointer-events: none;
+}
+
+.team-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: calc(var(--radius-xl) - 4px);
+  display: block;
+}
+
+.team-caption {
+  text-align: center;
+}
+
+.team-caption strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.team-caption span {
+  font-size: 0.9375rem;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+}
+
+.team-content {
+  max-width: 640px;
+}
+
+.team-lead {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.team-content p {
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.team-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.team-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.team-highlights svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.team-cta {
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .team-content {
+    max-width: none;
+  }
+
+  .team-highlights {
+    align-items: center;
+  }
+
+  .team-highlights li {
+    max-width: 420px;
+    text-align: left;
+  }
+
+  .team-cta {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-photo-frame {
+    max-width: 280px;
+  }
+}
