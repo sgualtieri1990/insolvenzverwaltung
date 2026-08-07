@@ -6,7 +6,12 @@
     <ul class="nav-links">
       @for (item of navItems; track item.sectionId) {
         <li>
-          <a [href]="item.href" [class.nav-cta]="item.sectionId === 'kontakt'">
+          <a
+            [href]="item.href"
+            [class.nav-cta]="item.sectionId === 'kontakt'"
+            [class.active]="activeSection() === item.sectionId"
+            (click)="onNavClick(item.sectionId)"
+          >
             @if (item.sectionId === 'kontakt') {
               <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 6h16v12H4z"/>
@@ -28,6 +33,7 @@
       class="mobile-nav-item"
       [class.active]="activeSection() === item.sectionId"
       [attr.aria-current]="activeSection() === item.sectionId ? 'page' : null"
+      (click)="onNavClick(item.sectionId)"
     >
       <span class="mobile-nav-icon" aria-hidden="true">
         @switch (item.icon) {

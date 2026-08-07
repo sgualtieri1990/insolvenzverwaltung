@@ -17,17 +17,17 @@ export class Leistungen {
   readonly cards: IntroCard[] = [
     {
       title: 'Bewertung',
-      description: 'Fundierte Wertermittlung von Vermögensgegenständen als belastbare Grundlage für Verfahren und Entscheidungen.',
+      description: 'Wertermittlung von Vermögensgegenständen als belastbare Grundlage für Verfahren.',
       icon: 'clipboard',
     },
     {
       title: 'Verwertung',
-      description: 'Optimale Realisierung von Assets durch strukturierten Verkauf oder wirtschaftlich sinnvolle Betriebsfortführung.',
+      description: 'Realisierung von Assets durch Verkauf oder wirtschaftliche Betriebsfortführung.',
       icon: 'chart',
     },
     {
       title: 'Sicherstellung',
-      description: 'Schutz und Erhaltung von Vermögenswerten gegen Verluste und unzulässige Vermögensverschiebungen.',
+      description: 'Schutz und Erhaltung von Vermögenswerten gegen Verlust und unzulässige Verschiebungen.',
       icon: 'shield',
     },
   ];
